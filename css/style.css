@@ -1,0 +1,146 @@
+.topbar{
+	background-color: #222222;
+	color: white;
+	height: 60px;
+}
+.topbar a img{
+	padding: 5px;
+	height: 60px;
+}
+.topbar .loginButton{
+	float: right;
+	height: 60px;
+	width: 20%;
+	background-color: transparent;
+	border: none;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 30px;
+}
+.topbar .searchField{
+	display: inline-block;
+	position: relative;
+	top: -25px;
+}
+.topbar .searchField input{
+	width: 100%;
+	position: relative;
+	left: 20%;
+	border-radius: 20px;
+	padding: 3px;
+	z-index: 1;
+}
+@media only screen and (min-width:950px){
+	.topbar .searchField input{
+		width: 250px;
+	}
+}
+@media only screen and (min-width:1240px){
+	.topbar .searchField input{
+		width: 500px;
+	}
+}
+.topbar #searchResultPanel{
+	background-color: #222;
+	position: relative;
+	color: white;
+	left: 20%;
+	top: -30px;
+	padding-top: 30px;
+}
+.topbar #searchResultPanel table tr td a{
+	color: white;
+}
+.topbar .logoutForm{
+	float: right;
+	width: 20%;
+}
+.topbar .logoutForm .logoutButton{
+	height: 60px;
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 30px;
+}
+.topbar button:hover{
+	background-color: rgba(60,60,60,0.6);
+}
+.topbar h1{
+	padding: 10px;
+	float: right;
+	color: white;
+	height: 60px;
+}
+.topbar h1 a{
+	color: white;
+	position: relative;
+	right: 20px;
+}
+
+#loginPanel{
+	position: absolute;
+	right: 0px;
+	background-color: #222222;
+	color: white;
+	float: right;
+	padding: 5px;
+	text-transform: uppercase;
+	display: none;
+}
+#loginPanel form table{
+	width: 100%;
+}
+#loginPanel form table tbody tr td button{
+	width: 100%;
+}
+#loginPanel form table tbody tr td input{
+	width: 100%;
+}
+
+.welcomeMessage{
+	float: left;
+	width: 50%;
+	padding: 30px;
+}
+
+.registerPanel{
+	padding: 30px;
+	text-transform: uppercase;
+	float: left;
+	width: 50%;
+}
+.registerPanel form table{
+	width: 100%;
+}
+.registerPanel form table tbody tr td{
+	padding: 2px;
+}
+.registerPanel form table tbody tr td input{
+	width: 100%;
+}
+.registerPanel form table tbody tr td select{
+	width: 100%;
+}
+.registerPanel form table tbody tr td button{
+	width: 100%;
+}
+
+.userProfilePanel{
+	width: 80%;
+	display: inline-block;
+}
+.userProfilePanel img{
+	float: left;
+	width: 240px;
+	height: 140px;
+}
+.userProfilePanel h1{
+	position: relative;
+	float: left;
+	top: 110px;
+	font-size: 30px;
+}
