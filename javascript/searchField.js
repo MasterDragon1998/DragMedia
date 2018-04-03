@@ -1,6 +1,31 @@
 
+var searchResultPanel;
+var searchField;
+window.onload = function(){
+	searchResultPanel = document.getElementById("searchResultPanel");
+	searchResultPanel.open = false;
+	searchField = document.getElementById("searchField");
+}
+document.addEventListener("click",function(e){
+	if(searchResultPanel.open){
+		if(e.target==searchResultPanel||e.target==searchField){}else{
+			searchResultPanel.innerHTML = "";
+			searchResultPanel.open = false;
+		}
+	}
+	if(!searchResultPanel.open){
+		if(e.target==searchField){
+			searchFieldSubmit(searchField.value);
+		}
+	}
+});
+
 function searchFieldSubmit(input){
-	console.log(input);
+	input = input.trim();
+	if(input==""){
+		return false;
+	}
+	document.cookie = "searchText="+input;
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(xhttp.readyState == 4 && xhttp.status == 200){
@@ -27,4 +52,5 @@ function createSearchResultTable(input){
 	var searchResultPanel = document.getElementById("searchResultPanel");
 	searchResultPanel.innerHTML = "";
 	searchResultPanel.appendChild(table);
+	searchResultPanel.open = true;
 }

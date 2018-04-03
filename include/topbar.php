@@ -2,7 +2,7 @@
 	<a href="index.php"><img src="images/dragmedia.png"></a>
 	<?php if($usermanager->isLogedIn){ ?>
 	<form class="searchField" action="index.php" method="GET" onsubmit="return searchFieldSubmit(this.elements[0].value)">
-		<input type="text" name="searchField" placeholder="SEARCHBAR" autocomplete="off">
+		<input id="searchField" type="text" name="searchField" placeholder="SEARCHBAR" autocomplete="off" onkeyup="searchFieldSubmit(this.value)" value="<?php if(isset($_COOKIE["searchText"])){ echo $_COOKIE["searchText"];  } ?>">
 		<div id="searchResultPanel"></div>
 	</form>
 	<form class="logoutForm" action="index.php" method="POST"><button class="logoutButton" type="submit" name="logout">Logout</button></form>

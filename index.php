@@ -43,7 +43,5 @@ $usermanager = new UserManager($connect,true);
 			require_once("include/registerPanel.php");
 		} ?>
 
-		<?php echo "<pre>"; print_r($usermanager->user); echo "</pre>"; ?>
-
 	</body>
 </html>
