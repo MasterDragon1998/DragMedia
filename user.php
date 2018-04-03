@@ -39,6 +39,35 @@ if(isset($_GET["username"])){
 
 	<div class="userProfilePanel">
 		<h1><?php echo $user->first_name." ".$user->last_name; ?> (A.K.A <?php echo $user->username; ?>)</h1>
+		<h2>User Info</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>Username:</td>
+					<td><?php echo $user->username; ?></td>
+				</tr>
+				<tr>
+					<td>First Name:</td>
+					<td><?php echo $user->first_name; ?></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><?php echo $user->last_name; ?></td>
+				</tr>
+				<tr>
+					<td>E-Mail:</td>
+					<td><?php echo $user->email; ?></td>
+				</tr>
+				<tr>
+					<td>Country:</td>
+					<td><img src="<?php echo $user->country->img_path; ?>" height="10px"><?php echo $user->country->name; ?></td>
+				</tr>
+				<tr>
+					<td>BirthDate:</td>
+					<td><?php echo $user->birthDate->format("d-m-Y"); ?></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	</body>

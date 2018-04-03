@@ -133,14 +133,6 @@
 	width: 80%;
 	display: inline-block;
 }
-.userProfilePanel img{
-	float: left;
-	width: 240px;
-	height: 140px;
-}
 .userProfilePanel h1{
-	position: relative;
-	float: left;
-	top: 110px;
-	font-size: 30px;
+	
 }
