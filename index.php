@@ -2,8 +2,16 @@
 
 require_once("scripts/connect.php");
 require_once("classes/UserManager.php");
+require_once("classes/PostManager.php");
+require_once("classes/Post.php");
 
 $usermanager = new UserManager($connect,true);
+
+if($usermanager->isLogedIn){
+	$postmanager = new PostManager($connect,$usermanager,true);
+}
+
+$posts = getAllPosts($connect);
 
 ?>
 <!DOCTYPE html>
@@ -41,6 +49,28 @@ $usermanager = new UserManager($connect,true);
 		<?php
 		if(!$usermanager->isLogedIn){
 			require_once("include/registerPanel.php");
+		} ?>
+
+		<?php if($usermanager->isLogedIn){ ?>
+		<div class="postArea">
+			<form action="index.php" method="POST">
+				<table>
+					<tr>
+						<td><input type="text" name="postTitle" placeholder="POST TITLE"></td>
+					</tr>
+					<tr>
+						<td><textarea name="postContent" placeholder="POST CONTENT" maxlength="255"></textarea></td>
+					</tr>
+					<tr>
+						<td><button type="submit" name="post">Post</button><td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<?php } ?>
+
+		<?php if($usermanager->isLogedIn){ 
+		include_once("include/postPanel.php");
 		} ?>
 
 	</body>

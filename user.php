@@ -9,13 +9,15 @@ if(!$usermanager->isLogedIn){
 	header("location:index.php");
 }
 if(isset($_GET["username"])){
-	$user = getUserByUsername($connect,$_GET["username"]);
+	$user = getUserByUsername($connect,$_GET["username"],true);
 	if(!$user){
 		header("location:index.php");
 	}
 }else{
 	header("location:index.php");
 }
+
+$posts = $user->posts;
 
 ?>
 <!DOCTYPE html>
@@ -69,6 +71,8 @@ if(isset($_GET["username"])){
 			</tbody>
 		</table>
 	</div>
+
+	<?php include_once("include/postPanel.php"); ?>
 
 	</body>
 </html>

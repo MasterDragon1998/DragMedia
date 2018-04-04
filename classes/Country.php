@@ -25,6 +25,16 @@ function getAllCountrys($conn){
 		$conn->error;
 	}
 }
+function getCountryById($conn,$id){
+	$id = $conn->real_escape_string($id);
+	$result = $conn->query("SELECT * FROM country WHERE id = '$id'");
+	if($result){
+		$row = $result->fetch_assoc();
+		return rowToCountry($row);
+	}else{
+		echo $conn->error;
+	}
+}
 function getCountryByName($conn,$country){
 	$country = $conn->real_escape_string($country);
 	$result = $conn->query("SELECT * FROM country WHERE name = '$country'");
